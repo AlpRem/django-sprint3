@@ -26,7 +26,7 @@ def post_detail(request, id):
         is_published=True,
         pub_date__lte=timezone.now(),
         category__is_published=True,
-    ).order_by('-pub_date')
+    )
     context = {'post': post}
     return render(request, template, context)
 
